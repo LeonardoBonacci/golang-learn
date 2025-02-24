@@ -2,10 +2,7 @@
 docker exec -it mongo mongosh -u admin -p admin --authenticationDatabase admin  
 
 use predictions_db
-db.createCollection("predictions")
-
 db.predictions.find().pretty()
-
 ```
 
 ```
