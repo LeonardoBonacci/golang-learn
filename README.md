@@ -1,1 +1,1 @@
-# golang-firstapp
+# Playground for Go
