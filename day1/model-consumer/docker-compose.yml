@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+
+  model-consumer:
+    build:
+      context: .
+    image: model-consumer
+    container_name: model-consumer
+    environment:
+      - MONGO_URI=mongodb://admin:admin@mongo:27017
+    depends_on:
+      - mongo
+    ports:
+      - "8081:8081"
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
